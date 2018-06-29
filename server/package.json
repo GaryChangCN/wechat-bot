@@ -1,0 +1,26 @@
+{
+    "name": "wechat-bot",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "dev": "NODE_ENV=development onchange '**/*.ts' -i -- ts-node index.ts"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "koa": "^2.5.1",
+        "koa-bodyparser": "^4.2.1",
+        "koa-router": "^7.4.0"
+    },
+    "devDependencies": {
+        "@types/koa": "^2.0.46",
+        "@types/koa-bodyparser": "^5.0.0",
+        "@types/koa-router": "^7.0.30",
+        "@types/node": "^10.5.1",
+        "node-ts": "^2.1.2",
+        "onchange": "^4.0.0",
+        "tslint": "^5.10.0",
+        "typescript": "^2.9.2"
+    }
+}
