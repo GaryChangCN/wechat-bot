@@ -6,4 +6,6 @@ router.get('*', async (ctx, next) => {
     ctx.body = 'hello world'
 })
 
+// router.get('')
+
 export default router
