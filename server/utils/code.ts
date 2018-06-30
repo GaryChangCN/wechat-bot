@@ -1,0 +1,7 @@
+export enum code {
+    PERMISSSION_DEINED = 403,
+
+    PARAMETERS_FAIL = 4000,
+
+    LOGIN_EXPIRED_OR_NOT_LOGIN = 10000,
+}
