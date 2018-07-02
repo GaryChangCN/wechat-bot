@@ -4,4 +4,5 @@ export enum code {
     PARAMETERS_FAIL = 4000,
 
     LOGIN_EXPIRED_OR_NOT_LOGIN = 10000,
+    LOGIN_ERROR_OUTOF_LIMIT
 }
