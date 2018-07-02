@@ -1,5 +1,5 @@
 import * as Router from 'koa-router'
-import { checkSession } from '../../utils/session'
+import { checkSession, generateSession } from '../../utils/session'
 import bc from '../../utils/bodyCreator'
 import { code } from '../../utils/code'
 import { ReqLogin } from '../../typings'
@@ -28,6 +28,7 @@ export const login = async (ctx: Router.IRouterContext) => {
     hmac.update(password + config.key.seed)
     const hex = hmac.digest('hex')
     if (hex === config.key.password) {
+        generateSession(ctx)
         ctx.body = bc(null, true)
     } else {
         ctx.body = bc(code.PERMISSSION_DEINED)
