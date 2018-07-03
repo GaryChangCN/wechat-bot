@@ -1,10 +1,10 @@
 import * as Router from 'koa-router'
-import { checkSession, generateSession } from '../../utils/session'
-import bc from '../../utils/bodyCreator'
-import { code } from '../../utils/code'
-import { ReqLogin } from '../../typings'
+import { checkSession, generateSession } from '../utils/session'
+import bc from '../utils/bodyCreator'
+import { code } from '../utils/code'
+import { ReqLogin } from '../typings'
 import * as crypto from 'crypto'
-import config from '../../config'
+import config from '../config'
 
 // 此处不准备设置限制超时 reset 时间。超出限制后就不能尝试登录 必须重启进程
 const loginLimit = {
