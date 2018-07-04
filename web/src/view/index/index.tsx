@@ -4,7 +4,9 @@ class Index extends React.Component<any, any> {
     render () {
         return (
             <div className="index-page">
-                hello
+                <h2>
+                    hello index
+                </h2>
             </div>
         )
     }

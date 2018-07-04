@@ -2,14 +2,14 @@ import * as qs from 'querystring'
 
 const HOST = ''
 
-export async function post (path: string, data: {}) {
+export async function post (path: string, data?: {}) {
     const res = await fetch(HOST + path, {
         method: 'POST',
         credentials: 'same-origin',
         headers: {
             'content-type': 'application/json'
         },
-        body: JSON.stringify(data)
+        body: data ? JSON.stringify(data) : ''
     })
 
     const ret = await res.json()

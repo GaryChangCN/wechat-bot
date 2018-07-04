@@ -1,5 +1,6 @@
 import { post, get } from '../lib/http'
 import polling from './polling'
+import { wechatyStatus } from '../typings'
 
 // 启动轮询
 polling.start()
@@ -22,4 +23,19 @@ export async function loginStatus () {
     } catch (error) {
         return false
     }
+}
+
+export async function wechatyStatus () {
+    const ret = await get('/api/wechaty/status')
+    return ret as wechatyStatus
+}
+
+export async function wechatyStart () {
+    const ret = await post('/api/wechaty/start')
+    return ret as boolean
+}
+
+export async function wechatyStop () {
+    const ret = await post('/api/wechaty/stop')
+    return ret as boolean
 }

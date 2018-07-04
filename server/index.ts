@@ -1,15 +1,13 @@
 import * as Koa from 'koa'
 import middlewares from './middlewares'
-import Weixin from './middlewares/weixin'
 import config from './config'
+import pollEmit from './controllers/emit'
 
 const app = new Koa()
 
 async function main () {
 
-    // 挂载 wechaty
-    await Weixin ()
-
+    pollEmit()
     // 挂载 koa 中间件
     middlewares(app)
 
