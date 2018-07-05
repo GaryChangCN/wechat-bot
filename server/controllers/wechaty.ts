@@ -3,6 +3,9 @@ import * as Router from 'koa-router'
 import bodyCreator from '../utils/bodyCreator'
 
 export let wechatRunning = false
+export let wexin = {
+    login: false
+}
 
 export const wechaty = Wechaty.instance()
 
@@ -13,7 +16,9 @@ export async function checkStatus (ctx: Router.IRouterContext) {
 }
 
 export async function start (ctx: Router.IRouterContext) {
-    await wechaty.start()
+    if (!wexin.login) {
+        await wechaty.start()
+    }
     wechatRunning = true
     ctx.body = bodyCreator(null, true)
 }

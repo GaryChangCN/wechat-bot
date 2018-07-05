@@ -1,13 +1,15 @@
 import { Store } from 'zlp'
 import { loginStatus, wechatyStatus, wechatyStart, wechatyStop } from './service'
 import history from '../lib/history'
+import { } from '../typings'
 
 class App extends Store {
     store = {
         isLogin: false,
         wechaty: {
             running: false,
-            qrcodeUrl: ''
+            qrcodeUrl: '',
+            user: ''
         }
     }
 
